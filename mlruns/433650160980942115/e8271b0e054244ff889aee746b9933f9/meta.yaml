@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/433650160980942115/e8271b0e054244ff889aee746b9933f9/artifacts
+end_time: 1763223140412
+entry_point_name: ''
+experiment_id: '433650160980942115'
+lifecycle_stage: active
+run_id: e8271b0e054244ff889aee746b9933f9
+run_name: bouncy-roo-882
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1763223138619
+status: 3
+tags: []
+user_id: ACER

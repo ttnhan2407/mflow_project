@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/433650160980942115/8788acc4c51a4b9fbae32decbec77a84/artifacts
+end_time: 1763222516154
+entry_point_name: ''
+experiment_id: '433650160980942115'
+lifecycle_stage: active
+run_id: 8788acc4c51a4b9fbae32decbec77a84
+run_name: peaceful-robin-95
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1763222513974
+status: 3
+tags: []
+user_id: ACER

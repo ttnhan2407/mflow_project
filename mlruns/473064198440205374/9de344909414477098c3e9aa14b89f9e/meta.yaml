@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/473064198440205374/9de344909414477098c3e9aa14b89f9e/artifacts
+end_time: 1763221551375
+entry_point_name: ''
+experiment_id: '473064198440205374'
+lifecycle_stage: active
+run_id: 9de344909414477098c3e9aa14b89f9e
+run_name: magnificent-fish-407
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1763221542886
+status: 3
+tags: []
+user_id: ACER

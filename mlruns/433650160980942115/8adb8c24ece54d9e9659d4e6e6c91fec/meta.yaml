@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/433650160980942115/8adb8c24ece54d9e9659d4e6e6c91fec/artifacts
+end_time: 1763222519968
+entry_point_name: ''
+experiment_id: '433650160980942115'
+lifecycle_stage: active
+run_id: 8adb8c24ece54d9e9659d4e6e6c91fec
+run_name: luminous-stork-227
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1763222518131
+status: 3
+tags: []
+user_id: ACER

@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/433650160980942115/dd91c8bf94d14309a37b036f6cb938fb/artifacts
+end_time: 1763286220033
+entry_point_name: ''
+experiment_id: '433650160980942115'
+lifecycle_stage: active
+run_id: dd91c8bf94d14309a37b036f6cb938fb
+run_name: beautiful-seal-552
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1763286218146
+status: 3
+tags: []
+user_id: ACER

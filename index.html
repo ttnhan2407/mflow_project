@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dự đoán Sức khỏe Cây</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background: #f4f7f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 450px;
+            margin: auto;
+            background: white;
+            border-radius: 12px;
+            padding: 35px 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+            transition: all 0.3s ease;
+        }
+
+        h2 {
+            text-align: center;
+            color: #222;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #444;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 12px 15px;
+            font-size: 16px;
+            font-family: 'Inter', sans-serif;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        input[type="number"]:focus {
+            border-color: #28a745;
+            box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.2);
+            outline: none;
+        }
+
+        .btn {
+            margin-top: 10px;
+            width: 100%;
+            padding: 14px;
+            font-size: 18px;
+            font-weight: 600;
+            border: 1px solid transparent; 
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn-primary {
+            background: #28a745;
+            color: white;
+            border-color: #28a745;
+        }
+
+        .btn-primary:hover {
+            background: #218838;
+            border-color: #218838;
+        }
+
+        .btn-primary:disabled {
+            background: #9c9c9c;
+            border-color: #9c9c9c;
+            cursor: not-allowed;
+            transform: translateY(0);
+        }
+
+        .btn-secondary {
+            background: #ffffff;
+            color: #28a745;
+            border-color: #28a745;
+        }
+
+        .btn-secondary:hover {
+            background: #f4f7f6; 
+            color: #218838;
+            border-color: #218838;
+        }
+
+
+        .result {
+            margin-top: 25px;
+            font-size: 1.15rem;
+            font-weight: 600;
+            text-align: center;
+            padding: 15px;
+            border-radius: 8px;
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+
+        .result.show {
+            display: block;
+        }
+
+        .result.success {
+            background: #e6f7ec;
+            color: #218838;
+            border: 1px solid #b7e1c1;
+        }
+
+        .result.error {
+            background: #fdecea;
+            color: #d9534f;
+            border: 1px solid #f5c6cb;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>🌿 Dự đoán Sức khỏe Cây</h2>
+
+    <div class="form-group">
+        <label for="water">Nước (0 - 100)</label>
+        <input id="water" type="number" min="0" max="100" placeholder="Ví dụ: 70">
+    </div>
+
+    <div class="form-group">
+        <label for="light">Ánh sáng (0 - 100)</label>
+        <input id="light" type="number" min="0" max="100" placeholder="Ví dụ: 85">
+    </div>
+
+    <button id="predict-btn" class="btn btn-primary" onclick="predict()">Dự đoán</button>
+    
+    <button class="btn btn-secondary" onclick="window.location.href='home.html'">
+        Trở về Trang chủ
+    </button>
+    
+    <div class="result" id="result"></div>
+</div>
+
+<script>
+    const waterInput = document.getElementById("water");
+    const lightInput = document.getElementById("light");
+    const resultEl = document.getElementById("result");
+    const predictBtn = document.getElementById("predict-btn");
+
+    async function predict() {
+        let water = waterInput.value;
+        let light = lightInput.value;
+
+        resultEl.className = "result";
+        resultEl.innerHTML = "";
+
+        if (water === "" || light === "") {
+            resultEl.innerHTML = "⚠️ Vui lòng nhập đầy đủ thông tin!";
+            resultEl.className = "result error show";
+            return;
+        }
+
+        predictBtn.disabled = true;
+        predictBtn.innerHTML = "Đang dự đoán...";
+
+        try {
+            let res = await fetch("http://127.0.0.1:8000/predict", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({water: Number(water), light: Number(light)})
+            });
+
+            if (!res.ok) {
+                throw new Error("Server response was not ok.");
+            }
+
+            let data = await res.json();
+
+            if (data.prediction === 1) {
+                resultEl.innerHTML = "🌿 CÂY SỐNG!";
+                resultEl.className = "result success show"; 
+            } else {
+                resultEl.innerHTML = "💀 CÂY CHẾT!";
+                resultEl.className = "result error show"; 
+            }
+
+        } catch (error) {
+            console.error("Fetch error:", error);
+            resultEl.innerHTML = "❌ Đã xảy ra lỗi kết nối. Vui lòng thử lại.";
+            resultEl.className = "result error show";
+        } finally {
+            predictBtn.disabled = false;
+            predictBtn.innerHTML = "Dự đoán";
+        }
+    }
+</script>
+
+</body>
+</html>

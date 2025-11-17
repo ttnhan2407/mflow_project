@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/473064198440205374/6e964310ded94996ad1ec5b62f36d578/artifacts
+end_time: 1763221560297
+entry_point_name: ''
+experiment_id: '473064198440205374'
+lifecycle_stage: active
+run_id: 6e964310ded94996ad1ec5b62f36d578
+run_name: selective-frog-95
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1763221556688
+status: 3
+tags: []
+user_id: ACER

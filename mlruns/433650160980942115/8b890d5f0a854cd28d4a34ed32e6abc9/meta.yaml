@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/433650160980942115/8b890d5f0a854cd28d4a34ed32e6abc9/artifacts
+end_time: 1763286363805
+entry_point_name: ''
+experiment_id: '433650160980942115'
+lifecycle_stage: active
+run_id: 8b890d5f0a854cd28d4a34ed32e6abc9
+run_name: upbeat-auk-493
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1763286361623
+status: 3
+tags: []
+user_id: ACER

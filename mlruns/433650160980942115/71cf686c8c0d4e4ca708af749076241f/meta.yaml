@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/433650160980942115/71cf686c8c0d4e4ca708af749076241f/artifacts
+end_time: 1763223138587
+entry_point_name: ''
+experiment_id: '433650160980942115'
+lifecycle_stage: active
+run_id: 71cf686c8c0d4e4ca708af749076241f
+run_name: magnificent-bee-517
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1763223135234
+status: 3
+tags: []
+user_id: ACER

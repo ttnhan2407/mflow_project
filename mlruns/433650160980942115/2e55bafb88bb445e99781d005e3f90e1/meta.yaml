@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/433650160980942115/2e55bafb88bb445e99781d005e3f90e1/artifacts
+end_time: 1763222518120
+entry_point_name: ''
+experiment_id: '433650160980942115'
+lifecycle_stage: active
+run_id: 2e55bafb88bb445e99781d005e3f90e1
+run_name: resilient-mouse-521
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1763222516165
+status: 3
+tags: []
+user_id: ACER

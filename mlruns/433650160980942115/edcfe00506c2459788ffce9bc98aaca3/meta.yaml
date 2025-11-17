@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/433650160980942115/edcfe00506c2459788ffce9bc98aaca3/artifacts
+end_time: 1763286315152
+entry_point_name: ''
+experiment_id: '433650160980942115'
+lifecycle_stage: active
+run_id: edcfe00506c2459788ffce9bc98aaca3
+run_name: big-squirrel-133
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1763286312937
+status: 3
+tags: []
+user_id: ACER
