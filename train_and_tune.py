@@ -26,8 +26,8 @@ mlflow.set_experiment("Water_Light_Example")
 # ---------------- Train & Tune ----------------
 param_list = [
     {"n_estimators": 50, "max_depth": 3},
-    {"n_estimators": 100, "max_depth": 3},
     {"n_estimators": 100, "max_depth": 5},
+    {"n_estimators": 200, "max_depth": 10},
 ]
 
 best_f1 = 0
